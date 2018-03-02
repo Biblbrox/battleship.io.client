@@ -1,0 +1,362 @@
+obj/local/armeabi/objs-debug/cocosbuilder_static/CCNodeLoaderLibrary.o: \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/editor-support/cocosbuilder/CCNodeLoaderLibrary.cpp \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCNodeLoaderLibrary.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCBReader.h \
+ /home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/set \
+ /home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/string \
+ /home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/vector \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCNode.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/ccMacros.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCConsole.h \
+ /home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/thread \
+ /home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/map \
+ /home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCRef.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCPlatformMacros.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/ccConfig.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCPlatformConfig.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCPlatformDefine.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/android/CCPlatformDefine-android.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCStdC.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/android/CCStdC-android.h \
+ /home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/cassert \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/ccRandom.h \
+ /home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/random \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCVector.h \
+ /home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/algorithm \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCProtocols.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/ccTypes.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/CCGeometry.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/CCMath.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Vec2.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/CCMathBase.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Vec2.inl \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Vec3.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Vec3.inl \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Mat4.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Vec4.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Vec4.inl \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Mat4.inl \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Quaternion.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Quaternion.inl \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCGL.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/android/CCGL-android.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCTexture2D.h \
+ /home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_map \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCScriptSupport.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCCommon.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCTouch.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCEventTouch.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCEvent.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCEventKeyboard.h \
+ /home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/list \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/CCAffineTransform.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCComponentContainer.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCMap.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCComponent.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./physics/CCPhysicsBody.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./physics/CCPhysicsShape.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCData.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCBSequence.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCBSequenceProperty.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCBKeyframe.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCValue.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/GUI/CCControlExtension/CCControl.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/GUI/CCControlExtension/CCControlUtils.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCSprite.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCDrawNode.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCCustomCommand.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCRenderCommand.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCTextureAtlas.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCTrianglesCommand.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCGLProgramState.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCAutoPolygon.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCImage.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/GUI/CCControlExtension/../../ExtensionMacros.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/ExtensionExport.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCLayer.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCBAnimationManager.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCActionInterval.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCAction.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCAnimation.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCSpriteFrame.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCActionInstant.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCActionEase.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCTweenFunction.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/ExtensionMacros.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCLayerLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCNodeLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/GUI/CCControlExtension/CCInvocation.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/GUI/CCControlExtension/CCControl.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCLayerColorLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCLayerGradientLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCLabelBMFontLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCLabel.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCQuadCommand.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCFontAtlas.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCLabelTTFLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCSpriteLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCScale9SpriteLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./ui/UIScale9Sprite.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCSpriteBatchNode.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCBatchCommand.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./ui/GUIExport.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCBFileLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCMenuLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCMenu.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCMenuItem.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCMenuItemLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCMenuItemImageLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCControlButtonLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCControlLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions//GUI/CCControlExtension/CCControlButton.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions//GUI/CCControlExtension/CCControl.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions//GUI/CCControlExtension/CCInvocation.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCParticleSystemQuadLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCParticleSystemQuad.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCParticleSystem.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCScrollViewLoader.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/GUI/CCScrollView/CCScrollView.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCEventListenerTouch.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCEventListener.h \
+ /home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCActionTween.h
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCNodeLoaderLibrary.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCBReader.h:
+
+/home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/set:
+
+/home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/string:
+
+/home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/vector:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCNode.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/ccMacros.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCConsole.h:
+
+/home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/thread:
+
+/home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/map:
+
+/home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCRef.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCPlatformMacros.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/ccConfig.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCPlatformConfig.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCPlatformDefine.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/android/CCPlatformDefine-android.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCStdC.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/android/CCStdC-android.h:
+
+/home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/cassert:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/ccRandom.h:
+
+/home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/random:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCVector.h:
+
+/home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/algorithm:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCProtocols.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/ccTypes.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/CCGeometry.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/CCMath.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Vec2.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/CCMathBase.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Vec2.inl:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Vec3.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Vec3.inl:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Mat4.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Vec4.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Vec4.inl:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Mat4.inl:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Quaternion.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/Quaternion.inl:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCGL.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/android/CCGL-android.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCTexture2D.h:
+
+/home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_map:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCScriptSupport.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCCommon.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCTouch.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCEventTouch.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCEvent.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCEventKeyboard.h:
+
+/home/staralex/Android/android-ndk-r16b/sources/cxx-stl/gnu-libstdc++/4.9/include/list:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./math/CCAffineTransform.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCComponentContainer.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCMap.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCComponent.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./physics/CCPhysicsBody.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./physics/CCPhysicsShape.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCData.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCBSequence.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCBSequenceProperty.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCBKeyframe.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCValue.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/GUI/CCControlExtension/CCControl.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/GUI/CCControlExtension/CCControlUtils.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCSprite.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCDrawNode.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCCustomCommand.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCRenderCommand.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCTextureAtlas.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCTrianglesCommand.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCGLProgramState.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCAutoPolygon.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./platform/CCImage.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/GUI/CCControlExtension/../../ExtensionMacros.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/ExtensionExport.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCLayer.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCBAnimationManager.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCActionInterval.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCAction.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCAnimation.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCSpriteFrame.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCActionInstant.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCActionEase.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCTweenFunction.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/ExtensionMacros.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCLayerLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCNodeLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/GUI/CCControlExtension/CCInvocation.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/GUI/CCControlExtension/CCControl.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCLayerColorLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCLayerGradientLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCLabelBMFontLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCLabel.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCQuadCommand.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCFontAtlas.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCLabelTTFLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCSpriteLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCScale9SpriteLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./ui/UIScale9Sprite.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCSpriteBatchNode.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./renderer/CCBatchCommand.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./ui/GUIExport.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCBFileLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCMenuLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCMenu.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCMenuItem.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCMenuItemLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCMenuItemImageLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCControlButtonLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCControlLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions//GUI/CCControlExtension/CCControlButton.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions//GUI/CCControlExtension/CCControl.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions//GUI/CCControlExtension/CCInvocation.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCParticleSystemQuadLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCParticleSystemQuad.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCParticleSystem.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./editor-support/cocosbuilder/CCScrollViewLoader.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/extensions/../extensions/GUI/CCScrollView/CCScrollView.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCEventListenerTouch.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./base/CCEventListener.h:
+
+/home/staralex/testGame/MyGame/frameworks/cocos2d-x/cocos/./2d/CCActionTween.h:
