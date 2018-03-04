@@ -23,8 +23,6 @@ let ScoreLayer = cc.Layer.extend({
         this.playAgainMenu    = new cc.MenuItemLabel(this.playAgain, this.restart);
         this.backgroundSprite = new cc.Sprite(this.score.result === "win" ? res.backgroundOnWin.src : res.backgroundOnLost.src);
 
-        const size = cc.winSize;
-
         this.backgroundSprite.setAnchorPoint(0, 0);
         const scale = Math.max(size.width / this.backgroundSprite.getContentSize().width,
             size.height / this.backgroundSprite.getContentSize().height);

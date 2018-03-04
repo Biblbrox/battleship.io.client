@@ -7,21 +7,7 @@ let MainMenuLayer = cc.Layer.extend({
 
     ctor: function () {
         this._super();
-        cc.fontSize = size => {
-            return size;
-            // return cc.winSize.height > cc.winSize.width ? size / (cc.winSize.height / cc.winSize.width / 100 * cc.winSize.height)
-            //     : size / (cc.winSize.width / cc.winSize.height / (cc.winSize.width / cc.winSize.height / 100 * cc.winSize.width));
-        };
         this.backgroundSprite  = new cc.Sprite(res.backgroundSprite.src);
-
-        const size = cc.winSize;
-        // let size = cc.director.getVisibleSize();
-        // let origin = cc.director.getVisibleOrigin();
-        // cc.log("Size with: " + size.width);
-        // cc.log("Size height: " + size.height);
-        // cc.log("Origin x: " + origin.x);
-        // cc.log("Origin y: " + origin.y);
-
 
         let backgroundSprite  = new cc.Sprite(res.backgroundSprite.src);
         backgroundSprite.setAnchorPoint(0, 0);
@@ -40,12 +26,6 @@ let MainMenuLayer = cc.Layer.extend({
             cc.log("Play button");
             cc.director.runScene(new cc.TransitionFade(0.5, new GameScene(), cc.color(1, 1, 1, 1)));
         });
-
-        // if (size.width < size.height) {
-        //     let tmp = size.width;
-        //     size.width = size.height;
-        //     size.height = tmp;
-        // }
 
         itemNewGame.setPosition(cc.p(size.width / 2, (size.height / 6) * 4));
 

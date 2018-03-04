@@ -27,89 +27,16 @@ let GameLayer = cc.Layer.extend({
         this.player.ownBoard   = new GameBoard(res.battleShipField.src);
         this.ownBoardLayer     = this.player.ownBoard.getLayer("Tile Layer 1");
         this.enemyBoardLayer   = this.player.enemyBoard.getLayer("Tile Layer 1");
-        this.topBoardLabel     = new cc.LabelTTF("", "GameFont", cc.fontSize(21));
+        this.topBoardLabel     = new cc.LabelTTF("", "GameFont", 21);
         this.audioIcon         = new ccui.Button();
-        this.waitEnemyLabel    = new cc.LabelTTF("Searching game...", "GameFont", cc.fontSize(20));
+        this.waitEnemyLabel    = new cc.LabelTTF("Searching game...", "GameFont", 20);
         this.score             = Score.instance;
-        this.labelOnError      = new cc.LabelTTF("The enemy disconnected", "GameFont", cc.fontSize(16));
+        this.labelOnError      = new cc.LabelTTF("The enemy disconnected", "GameFont", 16);
         this.audioIcon.loadTextures(res.audioIcon.src, res.audioDisableIcon.src, res.audioDisableIcon.src);
 
-        const size = cc.winSize;
+        this.initSprites();
 
-        this.size = size;
-
-        let backgroundSprite  = new cc.Sprite(res.backgroundSprite.src);
-        backgroundSprite.setAnchorPoint(0, 0);
-        const scale = Math.max(size.width / backgroundSprite.getContentSize().width,
-            size.height / backgroundSprite.getContentSize().height);
-        backgroundSprite.setScale(scale);
-
-        this.addChild(backgroundSprite);
-
-        this.waitEnemyLabel.setFontFillColor(cc.color(0, 50, 255, 200));
-        this.waitEnemyLabel.setAnchorPoint(cc.p(0.5, 0.5));
-        this.waitEnemyLabel.setPosition(cc.p(size.width / 2, size.height - size.height / 8));
-        this.addChild(this.waitEnemyLabel);
-
-        const margin = size.width / 14;
-
-        const enemyBoardScale = (size.height / 2) / this.player.enemyBoard.height;
-        this.player.enemyBoard.setAnchorPoint(cc.p(0.5, 0.5));
-        this.enemyBoardLayer.setScale(enemyBoardScale);
-        this.player.enemyBoard.setPosition(cc.p(size.width / 3 + 2 * size.width / 3 - size.width / 6 - margin, size.height / 2));
-        this.player.enemyBoard.width  = this.player.enemyBoard.width  * enemyBoardScale;
-        this.player.enemyBoard.height = this.player.enemyBoard.height * enemyBoardScale;
-
-        const ownBoardScale = (size.height / 2) / this.player.ownBoard.height;
-        this.player.ownBoard.setAnchorPoint(cc.p(0.5, 0.5));
-        this.ownBoardLayer.setScale(ownBoardScale);
-        this.player.ownBoard.setPosition(cc.p(size.width / 3 - size.width / 6 + margin, size.height / 2));
-        this.player.ownBoard.width  = this.player.ownBoard.width  * ownBoardScale;
-        this.player.ownBoard.height = this.player.ownBoard.height * ownBoardScale;
-
-        let ownBoardLabel     = new cc.LabelTTF("Your board", "GameFont", cc.fontSize(20));
-        let enemyBoardLabel   = new cc.LabelTTF("Enemy board", "GameFont", cc.fontSize(20));
-
-        ownBoardLabel.enableShadow(cc.color(100, 50, 50, 255), cc.size(4, 4), 0);
-        enemyBoardLabel.enableShadow(cc.color(100, 50, 50, 255), cc.size(4, 4), 0);
-
-        ownBoardLabel.setAnchorPoint(cc.p(0.5, 0.5));
-        ownBoardLabel.setPosition(cc.p(size.width / 3 - size.width / 6 + margin,
-            size.height / 2 + this.player.ownBoard.height / 2 + margin));
-        this.addChild(ownBoardLabel);
-
-        enemyBoardLabel.setAnchorPoint(cc.p(0.5, 0.5));
-        enemyBoardLabel.setPosition(cc.p(size.width / 3 + 2 * size.width / 3 - size.width / 6 - margin,
-            size.height / 2 + this.player.enemyBoard.height / 2 + margin));
-        this.addChild(enemyBoardLabel);
-
-        this.topBoardLabel.setAnchorPoint(cc.p(0.5, 0.5));
-        this.topBoardLabel.setPosition(cc.p(size.width / 2, size.height - size.height / 8));
-        this.addChild(this.topBoardLabel);
-
-        let exitButtonLabel = new cc.LabelTTF("Exit", "GameFont", 20);
-        let exitButtonMenuItem = new cc.MenuItemLabel(exitButtonLabel, () => {
-            this.server.webSocket.close();
-            this.score.result = this.exitOneEnemyDisconnect ? "win" : "lost";
-            cc.director.runScene(new cc.TransitionFade(0.5, new ScoreScene(), cc.color(1, 1, 1, 1)));
-        });
-        exitButtonMenuItem.setAnchorPoint(cc.p(0, 0));
-        exitButtonMenuItem.setPosition(size.width / 16, size.height - size.height / 12);
-
-        let menuExit = new cc.Menu(exitButtonMenuItem);
-        menuExit.setPosition(cc.p(0, 0));
-        this.addChild(menuExit);
-
-        this.addChild(this.player.enemyBoard);
-        this.addChild(this.player.ownBoard);
-
-        this.audioIcon.touchEnabled = true;
-        this.audioIcon._scale9Enabled = true;
-
-        const audioIconPos = new cc.Point(size.width - size.width / 12, size.height - size.height / 12);
-        this.audioIcon.setPosition(audioIconPos);
-
-        this.addChild(this.audioIcon);
+        this.addChildrenToLayer();
 
         this.server = new Server(Constants.SERVER_NAME);
         this.server.webSocket.onmessage = (data) => {
@@ -157,6 +84,9 @@ let GameLayer = cc.Layer.extend({
                 const x = event.getLocationX();
                 const y = event.getLocationY();
 
+                cc.log(that.player.enemyBoard.getRect());
+                cc.log(new cc.p(x, y));
+
                 if (that.walkingUserId === that.player.id
                     && cc.rectContainsPoint(that.player.enemyBoard.getRect(), cc.p(Math.floor(x), Math.floor(y)))) {
                     for (let i = 0; i < 10; i++) {
@@ -171,14 +101,15 @@ let GameLayer = cc.Layer.extend({
                             let tileRect = new cc.rect(tileX, tileY, currentTile.width, currentTile.height);
 
                             if (cc.rectContainsPoint(tileRect, cc.p(x, y))) {
+                                cc.log(tileRect);
                                 that.server.hit(i, j, that.player.enemyId);
                             }
                         }
                     }
                     cc.log("Clicked on enemyBoardField");
                 } else {
-                    let soundButtonRect = new cc.rect(Math.floor(audioIconPos.x - that.audioIcon._buttonNormalSpriteFrame.getRect().width / 2),
-                        Math.floor(audioIconPos.y - that.audioIcon._buttonNormalSpriteFrame.getRect().height / 2),
+                    let soundButtonRect = new cc.rect(Math.floor(that.audioIconPos.x - that.audioIcon._buttonNormalSpriteFrame.getRect().width / 2),
+                        Math.floor(that.audioIconPos.y - that.audioIcon._buttonNormalSpriteFrame.getRect().height / 2),
                         that.audioIcon._buttonNormalSpriteFrame.getRect().width,
                         that.audioIcon._buttonNormalSpriteFrame.getRect().height);
                     if (cc.rectContainsPoint(soundButtonRect, cc.p(Math.floor(x), Math.floor(y)))) {
@@ -195,11 +126,86 @@ let GameLayer = cc.Layer.extend({
         return true;
     },
 
+    addChildrenToLayer: function() {
+        this.addChild(this.backgroundSprite);
+        this.addChild(this.waitEnemyLabel);
+        this.addChild(this.ownBoardLabel);
+        this.addChild(this.enemyBoardLabel);
+        this.addChild(this.topBoardLabel);
+        this.addChild(this.menuExit);
+        this.addChild(this.player.enemyBoard);
+        this.addChild(this.player.ownBoard);
+        this.addChild(this.audioIcon);
+    },
+
+    initSprites: function() {
+        this.backgroundSprite  = new cc.Sprite(res.backgroundSprite.src);
+        this.backgroundSprite.setAnchorPoint(0, 0);
+        const scale = Math.max(size.width / this.backgroundSprite.getContentSize().width,
+            size.height / this.backgroundSprite.getContentSize().height);
+        this.backgroundSprite.setScale(scale);
+
+        this.waitEnemyLabel.setFontFillColor(cc.color(0, 50, 255, 200));
+        this.waitEnemyLabel.setAnchorPoint(cc.p(0.5, 0.5));
+        this.waitEnemyLabel.setPosition(cc.p(size.width / 2, size.height - size.height / 8));
+
+        const margin = size.width / 14;
+
+        const enemyBoardScale = (size.height / 2) / this.player.enemyBoard.height;
+        this.player.enemyBoard.setAnchorPoint(cc.p(0.5, 0.5));
+        this.enemyBoardLayer.setScale(enemyBoardScale);
+        this.player.enemyBoard.setPosition(cc.p(size.width / 3 + 2 * size.width / 3 - size.width / 6 - margin, size.height / 2));
+        this.player.enemyBoard.width  *= enemyBoardScale;
+        this.player.enemyBoard.height *= enemyBoardScale;
+
+        const ownBoardScale = (size.height / 2) / this.player.ownBoard.height;
+        this.player.ownBoard.setAnchorPoint(cc.p(0.5, 0.5));
+        this.ownBoardLayer.setScale(ownBoardScale);
+        this.player.ownBoard.setPosition(cc.p(size.width / 3 - size.width / 6 + margin, size.height / 2));
+        this.player.ownBoard.width  *= ownBoardScale;
+        this.player.ownBoard.height *= ownBoardScale;
+
+        this.ownBoardLabel     = new cc.LabelTTF("Your board", "GameFont", 20); // TODO: check this code. Labels is gone.
+        this.enemyBoardLabel   = new cc.LabelTTF("Enemy board", "GameFont", 20);
+
+        this.ownBoardLabel.enableShadow(cc.color(100, 50, 50, 255), cc.size(4, 4), 0);
+        this.enemyBoardLabel.enableShadow(cc.color(100, 50, 50, 255), cc.size(4, 4), 0);
+
+        this.ownBoardLabel.setAnchorPoint(cc.p(0.5, 0.5));
+        this.ownBoardLabel.setPosition(cc.p(size.width / 3 - size.width / 6 + margin,
+            size.height / 2 + this.player.ownBoard.height / 2 + margin));
+
+        this.enemyBoardLabel.setAnchorPoint(cc.p(0.5, 0.5));
+        this.enemyBoardLabel.setPosition(cc.p(size.width / 3 + 2 * size.width / 3 - size.width / 6 - margin,
+            size.height / 2 + this.player.enemyBoard.height / 2 + margin));
+
+        this.topBoardLabel.setAnchorPoint(cc.p(0.5, 0.5));
+        this.topBoardLabel.setPosition(cc.p(size.width / 2, size.height - size.height / 8));
+
+        let exitButtonLabel = new cc.LabelTTF("Exit", "GameFont", 20);
+        let exitButtonMenuItem = new cc.MenuItemLabel(exitButtonLabel, () => {
+            this.server.webSocket.close();
+            this.score.result = this.exitOneEnemyDisconnect ? "win" : "lost";
+            cc.director.runScene(new cc.TransitionFade(0.5, new ScoreScene(), cc.color(1, 1, 1, 1)));
+        });
+        exitButtonMenuItem.setAnchorPoint(cc.p(0, 0));
+        exitButtonMenuItem.setPosition(size.width / 16, size.height - size.height / 12);
+
+        this.menuExit = new cc.Menu(exitButtonMenuItem);
+        this.menuExit.setPosition(cc.p(0, 0));
+
+        this.audioIcon.touchEnabled = true;
+        this.audioIcon._scale9Enabled = true;
+
+        this.audioIconPos = new cc.Point(size.width - size.width / 12, size.height - size.height / 12);
+        this.audioIcon.setPosition(this.audioIconPos);
+    },
+
     enemyDisconnect: function (msg) {
         this.labelOnError.setAnchorPoint(cc.p(0.5, 0.5));
         this.exitOneEnemyDisconnect = true;
         this.labelOnError.setFontFillColor(cc.color(200, 0, 0));
-        this.labelOnError.setPosition(cc.p(this.size.width / 2, this.size.height - this.size.height / 14));
+        this.labelOnError.setPosition(cc.p(size.width / 2, size.height - size.height / 14));
         this.addChild(this.labelOnError);
     },
 
