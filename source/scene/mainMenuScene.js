@@ -7,30 +7,45 @@ let MainMenuLayer = cc.Layer.extend({
 
     ctor: function () {
         this._super();
+        cc.fontSize = size => {
+            return size;
+            // return cc.winSize.height > cc.winSize.width ? size / (cc.winSize.height / cc.winSize.width / 100 * cc.winSize.height)
+            //     : size / (cc.winSize.width / cc.winSize.height / (cc.winSize.width / cc.winSize.height / 100 * cc.winSize.width));
+        };
         this.backgroundSprite  = new cc.Sprite(res.backgroundSprite.src);
 
         const size = cc.winSize;
+        // let size = cc.director.getVisibleSize();
+        // let origin = cc.director.getVisibleOrigin();
+        // cc.log("Size with: " + size.width);
+        // cc.log("Size height: " + size.height);
+        // cc.log("Origin x: " + origin.x);
+        // cc.log("Origin y: " + origin.y);
 
-        const visibleSize = cc.director.getVisibleSize();
-        const origin = cc.director.getVisibleOrigin();
 
-        this.backgroundSprite.setPosition(cc.p(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+        let backgroundSprite  = new cc.Sprite(res.backgroundSprite.src);
+        backgroundSprite.setAnchorPoint(0, 0);
+        const scale = Math.max(size.width / backgroundSprite.getContentSize().width,
+            size.height / backgroundSprite.getContentSize().height);
+        backgroundSprite.setScale(scale);
 
-        this.addChild(this.backgroundSprite, -1);
-        const rX = visibleSize.width / this.backgroundSprite.getContentSize().width;
-        const rY = visibleSize.height / this.backgroundSprite.getContentSize().height;
-
-        this.backgroundSprite.setScale(rX, rY);
+        this.addChild(backgroundSprite, -1);
 
         // Create the main menu
 
         let itemNewGameLabel = new cc.LabelTTF("Start Game", "GameFont", 26);
         itemNewGameLabel.enableShadow(cc.color(50, 100, 100, 255), cc.size(4, 4), 0);
 
-        let itemNewGame =  new cc.MenuItemLabel(itemNewGameLabel, () => {
+        let itemNewGame = new cc.MenuItemLabel(itemNewGameLabel, () => {
             cc.log("Play button");
             cc.director.runScene(new cc.TransitionFade(0.5, new GameScene(), cc.color(1, 1, 1, 1)));
         });
+
+        // if (size.width < size.height) {
+        //     let tmp = size.width;
+        //     size.width = size.height;
+        //     size.height = tmp;
+        // }
 
         itemNewGame.setPosition(cc.p(size.width / 2, (size.height / 6) * 4));
 

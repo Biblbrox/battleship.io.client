@@ -27,11 +27,11 @@ let GameLayer = cc.Layer.extend({
         this.player.ownBoard   = new GameBoard(res.battleShipField.src);
         this.ownBoardLayer     = this.player.ownBoard.getLayer("Tile Layer 1");
         this.enemyBoardLayer   = this.player.enemyBoard.getLayer("Tile Layer 1");
-        this.topBoardLabel     = new cc.LabelTTF("", "GameFont", 21);
+        this.topBoardLabel     = new cc.LabelTTF("", "GameFont", cc.fontSize(21));
         this.audioIcon         = new ccui.Button();
-        this.waitEnemyLabel    = new cc.LabelTTF("Searching game...", "GameFont", 20);
+        this.waitEnemyLabel    = new cc.LabelTTF("Searching game...", "GameFont", cc.fontSize(20));
         this.score             = Score.instance;
-        this.labelOnError      = new cc.LabelTTF("The enemy disconnected", "GameFont", 16);
+        this.labelOnError      = new cc.LabelTTF("The enemy disconnected", "GameFont", cc.fontSize(16));
         this.audioIcon.loadTextures(res.audioIcon.src, res.audioDisableIcon.src, res.audioDisableIcon.src);
 
         const size = cc.winSize;
@@ -67,8 +67,8 @@ let GameLayer = cc.Layer.extend({
         this.player.ownBoard.width  = this.player.ownBoard.width  * ownBoardScale;
         this.player.ownBoard.height = this.player.ownBoard.height * ownBoardScale;
 
-        let ownBoardLabel     = new cc.LabelTTF("Your board", "GameFont", 20);
-        let enemyBoardLabel   = new cc.LabelTTF("Enemy board", "GameFont", 20);
+        let ownBoardLabel     = new cc.LabelTTF("Your board", "GameFont", cc.fontSize(20));
+        let enemyBoardLabel   = new cc.LabelTTF("Enemy board", "GameFont", cc.fontSize(20));
 
         ownBoardLabel.enableShadow(cc.color(100, 50, 50, 255), cc.size(4, 4), 0);
         enemyBoardLabel.enableShadow(cc.color(100, 50, 50, 255), cc.size(4, 4), 0);
