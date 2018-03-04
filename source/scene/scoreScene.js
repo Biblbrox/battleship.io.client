@@ -1,3 +1,7 @@
+import GameScene from "./gameScene";
+import Score from "../helper/score";
+import res from "../resource";
+
 let ScoreLayer = cc.Layer.extend({
 
     resultLabel: null,
@@ -58,3 +62,5 @@ let ScoreScene = cc.Scene.extend({
         this.addChild(layer);
     }
 });
+
+export default ScoreScene;

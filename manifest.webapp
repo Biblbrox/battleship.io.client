@@ -1,14 +1,14 @@
 {
   "version": "1.0",
-  "name": "MyGame",
-  "description": "MyGame",
+  "name": "Battleship",
+  "description": "The battleship IO game",
   "launch_path": "/index.html",
   "icons": {
     "128": "/res/icon.png"
   },
   "developer": {
-    "name": "Cocos2d-html5",
-    "url": "http://cocos2d-x.org/"
+    "name": "Kuchkov Aleksey",
+    "url": "git@github.com:Biblbrox/battleship.io.client.git"
   },
   "default_locale": "en",
   "installs_allowed_from": [

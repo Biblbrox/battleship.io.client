@@ -1,4 +1,4 @@
-class Server  {
+export default class Server  {
 
     constructor(serverName) {
         this.serverName = serverName;

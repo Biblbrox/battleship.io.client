@@ -1,4 +1,3 @@
-
 const Score = {
     _instance: null,
 
@@ -14,3 +13,5 @@ const Score = {
         return this._instance;
     }
 };
+
+export default Score;

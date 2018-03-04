@@ -1,4 +1,4 @@
-class GameBoard extends cc.TMXTiledMap {
+export default class GameBoard extends cc.TMXTiledMap {
 
     /**
      *

@@ -819,7 +819,7 @@ cc.loader = (function () {
                         xhr.removeEventListener('error', errorCallback);
                         if (xhr._timeoutId >= 0) {
                             clearTimeout(xhr._timeoutId);
-                        }
+                        }//
                         else {
                             xhr.removeEventListener('timeout', timeoutCallback);
                         }

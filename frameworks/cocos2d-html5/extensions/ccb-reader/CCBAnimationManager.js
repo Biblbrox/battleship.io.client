@@ -25,8 +25,8 @@
  ****************************************************************************/
 
 (function () {
-
-var _pos = cc.p();
+//
+var _pos  = cc.p();
 
 cc.BuilderAnimationManagerDelegate = cc.Class.extend({
     completedAnimationSequenceNamed: function (name) {
