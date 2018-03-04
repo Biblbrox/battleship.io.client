@@ -32,24 +32,13 @@ window.app.start = function() {
     cc.view.setOrientation(cc.ORIENTATION_LANDSCAPE);
 
     // Setup the resolution policy and design resolution size
-    cc.view.setDesignResolutionSize(1024, 768, cc.ResolutionPolicy.FIXED_HEIGHT);
+    cc.view.setDesignResolutionSize(960, 640, cc.ResolutionPolicy.FIXED_HEIGHT);
     // cc.view.setDesignResolutionSize(cc.view.getFrameSize().width, cc.view.getFrameSize().height, cc.ResolutionPolicy.FIXED_HEIGHT);
 
     cc.view.enableAutoFullScreen(true);
 
     // The game will be resized when browser size change
     cc.view.resizeWithBrowserSize(true);
-    cc.view.setResizeCallback(() => {
-        const frameSize = cc.view.getFrameSize();
-        if(frameSize.width < frameSize.height)
-        {
-            // cc.view.setDesignResolutionSize(width,height, cc.ResolutionPolicy.FIXED_HEIGHT);
-        }
-        else
-        {
-            // cc.view.setDesignResolutionSize(height,width, cc.ResolutionPolicy.FIXED_HEIGHT);
-        }
-    });
 
     //load resources
     cc.LoaderScene.preload(g_resources, function () {
