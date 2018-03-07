@@ -108,7 +108,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
-    <orderEntry type="jdk" jdkName="Android API 14 Platform" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="__local_aars__:/home/staralex/battleship.io.client/frameworks/cocos2d-x/cocos/platform/android/java/libs/httpclient-4.4.1.1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="__local_aars__:/home/staralex/battleship.io.client/frameworks/cocos2d-x/cocos/platform/android/java/libs/com.android.vending.expansion.zipfile.jar:unspecified@jar" level="project" />

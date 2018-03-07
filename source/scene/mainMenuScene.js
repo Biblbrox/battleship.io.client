@@ -9,6 +9,13 @@ let MainMenuLayer = cc.Layer.extend({
         this._super();
         this.backgroundSprite  = new cc.Sprite(res.backgroundSprite.src);
 
+        cc.eventManager.addListener({
+            event: cc.EventListener.TOUCH_ONE_BY_ONE,
+            onTouchBegan: function(event) {
+                toggleFullScreen();
+            }
+        }, this);
+
         let backgroundSprite  = new cc.Sprite(res.backgroundSprite.src);
         backgroundSprite.setAnchorPoint(0, 0);
         const scale = Math.max(size.width / backgroundSprite.getContentSize().width,
@@ -55,6 +62,28 @@ let MainMenuLayer = cc.Layer.extend({
         return true;
     }
 });
+
+function toggleFullScreen() {
+    var elem = document.documentElement;
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+    }
+    // let element = window.document.documentElement;
+    // if (!toggleFullScreen.alreadyCalled) {
+        // if(element.requestFullscreen) {
+        //     element.requestFullscreen();
+        // } else if(element.webkitrequestFullscreen) {
+        //     element.webkitRequestFullscreen();
+        // } else if(element.mozRequestFullscreen) {
+        //     element.mozRequestFullScreen();
+        // }
+    // }
+    // toggleFullScreen.alreadyCalled = true;
+}
 
 function openInNewTab(url) {
     let win = window.open(url, '_blank');

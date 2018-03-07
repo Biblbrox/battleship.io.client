@@ -12,6 +12,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
+    <!--google chrome fullscreen -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="manifest" href="/manifest.json">
 
     <!-- force webkit on 360 -->
     <meta name="renderer" content="webkit"/>
@@ -92,6 +96,20 @@ canvas {
 <script src="res/loading.js"></script>
 <canvas id="gameCanvas"></canvas>
 <script src="frameworks/cocos2d-html5/CCBoot.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('worker.js');
+    }
+
+// link to a image file
+    var iconUrl = 'https://www.seeklogo.net/wp-content/uploads/2014/10/Google-Chrome-logo-vector-download.png';
+
+// create the <img> html element
+// on first load it will request the image
+// second time it will load it from cache directly thanks to the service worker
+    var imgElement = document.createElement('img');
+    imgElement.src = iconUrl;
+</script>
 <script cocos src="main.js"></script>
 </body>
 </html>

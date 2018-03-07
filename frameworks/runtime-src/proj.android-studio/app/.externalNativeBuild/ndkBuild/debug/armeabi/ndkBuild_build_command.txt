@@ -2,7 +2,6 @@ Executable : /home/staralex/Android/android-ndk-r16b/ndk-build
 arguments : 
 NDK_PROJECT_PATH=null
 APP_BUILD_SCRIPT=/home/staralex/battleship.io.client/frameworks/runtime-src/proj.android-studio/app/jni/Android.mk
-NDK_APPLICATION_MK=/home/staralex/battleship.io.client/frameworks/runtime-src/proj.android-studio/app/jni/Application.mk
 APP_ABI=armeabi
 NDK_ALL_ABIS=armeabi
 NDK_DEBUG=1

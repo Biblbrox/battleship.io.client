@@ -1,5 +1,5 @@
 const Constants = {
-    SERVER_NAME: "ws://0.0.0.0:2346",
+    SERVER_NAME: "ws://192.168.42.243:2346",
     SUBMARINE_TYPE: "s",
     BATTLESHIP_TYPE: "b",
     DESTROYER_TYPE: "d",
