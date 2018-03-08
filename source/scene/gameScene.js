@@ -183,6 +183,7 @@ let GameLayer = cc.Layer.extend({
         this.exitButtonLabel.setTitleFontName("GameFont");
         this.exitButtonLabel.addTouchEventListener((sender, event) => {
         this.server.webSocket.close();
+            AudioEngine.playEffect(res.clickSound.src, false);
             this.score.result = this.exitOneEnemyDisconnect ? "win" : "lost";
             cc.director.runScene(new cc.TransitionFade(0.5, new ScoreScene(), cc.color(1, 1, 1, 1)));
         }, this);
@@ -190,7 +191,7 @@ let GameLayer = cc.Layer.extend({
         this.exitButtonLabel.setAnchorPoint(cc.p(0, 0));
         this.exitButtonLabel.setPosition(size.width / 16, size.height - size.height / 12);
 
-        this.audioIcon.setScale(3);
+        // this.audioIcon.setScale(3);
         this.audioIcon.touchEnabled = true;
         this.audioIcon._scale9Enabled = true;
 

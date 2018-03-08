@@ -1,6 +1,7 @@
 import GameScene from "./gameScene";
 import Score from "../helper/score";
 import res from "../resource";
+import AudioEngine from "../helper/audioEngine";
 
 let ScoreLayer = cc.Layer.extend({
 
@@ -49,6 +50,7 @@ let ScoreLayer = cc.Layer.extend({
     },
 
     restart: function() {
+        AudioEngine.playEffect(res.clickSound.src, false);
         cc.director.runScene(new cc.TransitionFade(0.5, new GameScene(), cc.Color(1, 1, 1, 1)));
     }
 });

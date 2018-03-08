@@ -11,6 +11,7 @@ const res = {
     battleship_4: { type: "png", src: "res/battleship_4.png"},
     fallSound: { type: "wav", src: "res/sounds/watersplash2.wav"},
     hitSound: { type: "wav", src: "res/sounds/DeathFlash.wav"},
+    clickSound: { type: "wav", src: "res/sounds/click.wav"},
     audioIcon: { type: "png", src: "res/sound_icon.png"},
     audioDisableIcon: { type: "png", src: "res/sound_disable_icon.png"}
 };

@@ -38,18 +38,12 @@ window.app.start = function() {
 
     cc.view.enableAutoFullScreen(true);
 
-    cc.director.setContentScaleFactor(cc.director.getVisibleSize().height / designSize.height);
+    window.scaleFactor = cc.director.getVisibleSize().height / designSize.height;
+
+    cc.director.setContentScaleFactor(scaleFactor);
 
     // The game will be resized when browser size change
     cc.view.resizeWithBrowserSize(true);
-
-    cc.view.setResizeCallback(() => {
-
-    });
-
-    //////////////////////
-
-////////////////////////
 
     // window.size = cc.director.getVisibleSize();
     window.size = cc.winSize;

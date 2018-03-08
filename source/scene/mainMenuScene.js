@@ -1,5 +1,6 @@
 import res from "../resource";
 import GameScene from "./gameScene";
+import AudioEngine from "../helper/audioEngine";
 
 let MainMenuLayer = cc.Layer.extend({
 
@@ -9,15 +10,9 @@ let MainMenuLayer = cc.Layer.extend({
         this._super();
         this.backgroundSprite  = new cc.Sprite(res.backgroundSprite.src);
 
-        cc.eventManager.addListener({
-            event: cc.EventListener.TOUCH_ONE_BY_ONE,
-            onTouchBegan: function(event) {
-                toggleFullScreen();
-            }
-        }, this);
-
         let backgroundSprite  = new cc.Sprite(res.backgroundSprite.src);
         backgroundSprite.setAnchorPoint(0, 0);
+        backgroundSprite.getTexture().setAntiAliasTexParameters();
         const scale = Math.max(size.width / backgroundSprite.getContentSize().width,
             size.height / backgroundSprite.getContentSize().height);
         backgroundSprite.setScale(scale);
@@ -26,11 +21,12 @@ let MainMenuLayer = cc.Layer.extend({
 
         // Create the main menu
 
-        let itemNewGameLabel = new cc.LabelTTF("Start Game", "GameFont", 26);
+        let itemNewGameLabel = new cc.LabelTTF("Start Game", "GameFont", 34);
         itemNewGameLabel.enableShadow(cc.color(50, 100, 100, 255), cc.size(4, 4), 0);
 
         let itemNewGame = new cc.MenuItemLabel(itemNewGameLabel, () => {
             cc.log("Play button");
+            AudioEngine.playEffect(res.clickSound.src, false);
             cc.director.runScene(new cc.TransitionFade(0.5, new GameScene(), cc.color(1, 1, 1, 1)));
         });
 
@@ -42,12 +38,14 @@ let MainMenuLayer = cc.Layer.extend({
 
         let descLabel = new cc.LabelTTF("Welcome to the battleship game." +
             " Click on start game to begin and you'll find own enemy.\n" +
-            "You may discover the battleship rules there: ", "Arial", 20);
+            "You may discover the battleship rules there: ", "Dejavu Serif", 28 * scaleFactor);
+        descLabel.setScale(1 / scaleFactor);
+        descLabel.getTexture().setAntiAliasTexParameters();
 
         descLabel.setPosition(cc.p(size.width / 2, size.height / 2.2));
         this.addChild(descLabel);
 
-        let rulesButtonLabel = new cc.LabelTTF("rules", "Arial", 21);
+        let rulesButtonLabel = new cc.LabelTTF("rules", "Arial", 29);
         let rulesButtonItem = new cc.MenuItemLabel(rulesButtonLabel, () => {
             openInNewTab("https://en.wikipedia.org/wiki/Battleship_(game)");
         });
@@ -55,35 +53,13 @@ let MainMenuLayer = cc.Layer.extend({
         rulesMenu.setPosition(cc.p(size.width / 2, size.height / 2.6));
         this.addChild(rulesMenu);
 
-        let underline = new cc.LabelTTF("_____", "Arial", 21);
+        let underline = new cc.LabelTTF("_____", "Arial", 29);
         underline.setPosition(rulesMenu.getPosition());
         this.addChild(underline);
 
         return true;
     }
 });
-
-function toggleFullScreen() {
-    var elem = document.documentElement;
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) {
-        elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen();
-    }
-    // let element = window.document.documentElement;
-    // if (!toggleFullScreen.alreadyCalled) {
-        // if(element.requestFullscreen) {
-        //     element.requestFullscreen();
-        // } else if(element.webkitrequestFullscreen) {
-        //     element.webkitRequestFullscreen();
-        // } else if(element.mozRequestFullscreen) {
-        //     element.mozRequestFullScreen();
-        // }
-    // }
-    // toggleFullScreen.alreadyCalled = true;
-}
 
 function openInNewTab(url) {
     let win = window.open(url, '_blank');
