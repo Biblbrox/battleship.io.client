@@ -75,54 +75,61 @@ let GameLayer = cc.Layer.extend({
             }
         };
 
+        let clickHandler = function(event) {
+            let t0 = performance.now();
+            const x = event.getLocationX();
+            const y = event.getLocationY();
+            cc.log(that.player.enemyBoard.getRect());
+            cc.log(cc.p(x, y));
+
+            if (that.walkingUserId === that.player.id
+                && cc.rectContainsPoint(that.player.enemyBoard.getRect(), cc.p(Math.floor(x), Math.floor(y)))) {
+                let enemyWasHit = false;
+                for (let i = 0; i < 10 && !enemyWasHit; i++) {
+                    for (let j = 0; j < 10 && !enemyWasHit; j++) {
+                        let currentTile = that.enemyBoardLayer.getTileAt(cc.p(i, j));
+                        currentTile.setAnchorPoint(cc.p(0, 0));
+                        const tileX = currentTile.getPositionX()
+                            + that.player.enemyBoard.getPositionX()
+                            - that.player.enemyBoard.getContentSize().width / 2;
+                        const tileY = currentTile.getPositionY()
+                            + that.player.enemyBoard.getPositionY()
+                            - that.player.enemyBoard.getContentSize().height / 2;
+                        let tileRect = cc.rect(tileX, tileY, currentTile.getContentSize().width, currentTile.getContentSize().height);
+
+                        if (cc.rectContainsPoint(tileRect, cc.p(x, y))) {
+                            cc.log("tileX = %d, tileY = %d", tileX, tileY);
+                            that.server.hit(i, j, that.player.enemyId);
+                            enemyWasHit = true;
+                        }
+                    }
+                }
+                cc.log("Clicked on enemyBoardField");
+            }
+
+            let t1 = performance.now();
+
+            cc.log("Performance: " + (t1 - t0) + " milliseconds");
+        };
+
         let that = this;
         cc.eventManager.addListener({
             event: cc.EventListener.TOUCH_ONE_BY_ONE,
-
-            onTouchBegan: function (event) {
-                let t0 = performance.now();
+            onTouchBegan: clickHandler
+        }, this);
+        cc.eventManager.addListener({
+            event: cc.EventListener.MOUSE,
+            onMouseDown: function(event) {
                 const x = event.getLocationX();
                 const y = event.getLocationY();
-
-                cc.log(that.player.enemyBoard.getRect());
-                cc.log(cc.p(x, y));
-
-                if (that.walkingUserId === that.player.id
-                    && cc.rectContainsPoint(that.player.enemyBoard.getRect(), cc.p(Math.floor(x), Math.floor(y)))) {
-                    let enemyWasHit = false;
-                    for (let i = 0; i < 10 && !enemyWasHit; i++) {
-                        for (let j = 0; j < 10 && !enemyWasHit; j++) {
-                            let currentTile = that.enemyBoardLayer.getTileAt(cc.p(i, j));
-                            currentTile.setAnchorPoint(cc.p(0, 0));
-                            const tileX = currentTile.getPositionX()
-                                + that.player.enemyBoard.getPositionX()
-                                - that.player.enemyBoard.getContentSize().width / 2;
-                            const tileY = currentTile.getPositionY()
-                                + that.player.enemyBoard.getPositionY()
-                                - that.player.enemyBoard.getContentSize().height / 2;
-                            let tileRect = cc.rect(tileX, tileY, currentTile.getContentSize().width, currentTile.getContentSize().height);
-
-                            if (cc.rectContainsPoint(tileRect, cc.p(x, y))) {
-                                cc.log("tileX = %d, tileY = %d", tileX, tileY);
-                                that.server.hit(i, j, that.player.enemyId);
-                                enemyWasHit = true;
-                            }
-                        }
-                    }
-                    cc.log("Clicked on enemyBoardField");
-                } else {
-                    let soundButtonRect = new cc.rect(Math.floor(that.audioIconPos.x - that.audioIcon._buttonNormalSpriteFrame.getRect().width / 2),
-                        Math.floor(that.audioIconPos.y - that.audioIcon._buttonNormalSpriteFrame.getRect().height / 2),
-                        that.audioIcon._buttonNormalSpriteFrame.getRect().width,
-                        that.audioIcon._buttonNormalSpriteFrame.getRect().height);
-                    if (cc.rectContainsPoint(soundButtonRect, cc.p(Math.floor(x), Math.floor(y)))) {
-                        that.toggleSound();
-                    }
+                let soundButtonRect = new cc.rect(Math.floor(that.audioIconPos.x - that.audioIcon._buttonNormalSpriteFrame.getRect().width / 2),
+                    Math.floor(that.audioIconPos.y - that.audioIcon._buttonNormalSpriteFrame.getRect().height / 2),
+                    that.audioIcon._buttonNormalSpriteFrame.getRect().width,
+                    that.audioIcon._buttonNormalSpriteFrame.getRect().height);
+                if (cc.rectContainsPoint(soundButtonRect, cc.p(Math.floor(x), Math.floor(y)))) {
+                    cc.log("Sound button clicked");
+                    that.toggleSound();
                 }
-
-                let t1 = performance.now();
-
-                cc.log("Performance: " + (t1 - t0) + " milliseconds");
             }
         }, this);
 
@@ -191,7 +198,8 @@ let GameLayer = cc.Layer.extend({
         this.exitButtonLabel.setAnchorPoint(cc.p(0, 0));
         this.exitButtonLabel.setPosition(size.width / 16, size.height - size.height / 12);
 
-        // this.audioIcon.setScale(3);
+        this.audioIcon.setPressedActionEnabled(false);
+        this.audioIcon.setScale(2.5);
         this.audioIcon.touchEnabled = true;
         this.audioIcon._scale9Enabled = true;
 
