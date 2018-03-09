@@ -189,7 +189,7 @@ let GameLayer = cc.Layer.extend({
         this.exitButtonLabel.setTitleFontSize(30);
         this.exitButtonLabel.setTitleFontName("GameFont");
         this.exitButtonLabel.addTouchEventListener((sender, event) => {
-        this.server.webSocket.close();
+            this.server.webSocket.close();
             AudioEngine.playEffect(res.clickSound.src, false);
             this.score.result = this.exitOneEnemyDisconnect ? "win" : "lost";
             cc.director.runScene(new cc.TransitionFade(0.5, new ScoreScene(), cc.color(1, 1, 1, 1)));
